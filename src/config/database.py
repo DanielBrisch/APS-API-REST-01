@@ -2,19 +2,14 @@ from contextlib import contextmanager
 
 from sqlmodel import Session, SQLModel, create_engine
 
-# sqlite_filename = "database.db"
-# connect_args = {"check_same_thread": False}
-# db_url = f"sqlite:///{sqlite_filename}"
-
 PG_USERNAME = "root"
 PG_PASSWORD = "postgres"
 PG_HOST = "localhost"
-PG_PORT = 5432
-PG_DATABASE = "oficina"
+PG_PORT = 54321
+PG_DATABASE = "race_db"
 
 connect_args = {}
 db_url = f"postgresql://{PG_USERNAME}:{PG_PASSWORD}@{PG_HOST}:{PG_PORT}/{PG_DATABASE}"
-
 
 engine = create_engine(db_url, echo=True, connect_args=connect_args)
 
